@@ -1,5 +1,3 @@
-//saveas  a text
-
 package main
 
 import (
@@ -8,8 +6,15 @@ import (
     "github.com/fatih/color"
 )
 
-func saveReportToFile(report URLReport) error {
-    file, err := os.Create("report.txt")
+func saveReportToFile(report URLReport, filename string) error {
+    // Create the result directory if it doesn't exist
+    err := os.MkdirAll("result", os.ModePerm)
+    if err != nil {
+        return fmt.Errorf("could not create directory: %v", err)
+    }
+
+    // Create or overwrite the file with the provided filename
+    file, err := os.Create(filename)
     if err != nil {
         return fmt.Errorf("could not create file: %v", err)
     }

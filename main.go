@@ -1,5 +1,3 @@
-//main file of the urlripper
-
 package main
 
 import (
@@ -20,8 +18,8 @@ func main() {
 
             report := scanURL(inputURL)
             report = checkURLReputation(inputURL, report)
-            saveReportToFile(report)
 
+            printReport(report) // Display the report to the user
             postScanMenu(report)
         } else if choice == "2" {
             fmt.Println("Exiting the application.")
@@ -70,14 +68,24 @@ func postScanMenu(report URLReport) {
         fmt.Scanln(&choice)
 
         if choice == "1" {
-            err := saveReportToFile(report)
+            fmt.Println("Enter filename to save the report (e.g., report.txt):")
+            var filename string
+            fmt.Scanln(&filename)
+
+            err := saveReportToFile(report, filename)
             if err != nil {
                 fmt.Println("Error saving report:", err)
             } else {
                 fmt.Println("Report saved successfully.")
             }
         } else if choice == "2" {
-            break
+            fmt.Println("Enter a URL to scan:")
+            var inputURL string
+            fmt.Scanln(&inputURL)
+
+            report = scanURL(inputURL)
+            report = checkURLReputation(inputURL, report)
+            printReport(report) // Display the report again
         } else if choice == "3" {
             fmt.Println("Exiting the application.")
             return

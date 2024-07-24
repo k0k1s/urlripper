@@ -3,6 +3,8 @@
 
 URLRipper is a tool for scanning and analyzing URLs. It checks if URLs are malicious, provides detailed reports, and integrates with VirusTotal for additional URL reputation analysis.
 
+![alt text](image.png)
+
 ## Getting Started
 
 To get started with URLRipper, follow these steps:
@@ -72,4 +74,4 @@ go build -o urlripper
 ./urlripper
 ```
 
-??ENJOYY??
+??ENJOYY??c

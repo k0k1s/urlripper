@@ -1,0 +1,9 @@
+URL Scanning Report:
+--------------------
+URL               : www.virustotal.com
+HTTP Status       : 0
+Content Type      : 
+Headers           : map[]
+Is Malicious      : No
+Reason            : URL appears safe according to VirusTotal
+--------------------
